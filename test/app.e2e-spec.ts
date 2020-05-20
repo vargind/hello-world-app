@@ -21,4 +21,19 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('Hello World!');
   });
+
+  it('/health (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/health')
+      .expect(200)
+      .expect('hello-world-app is operating as expected');
+  });
+
+  // Note expected data has escaped backslash (\\) to match returned data which has single backslash (\)
+  it('/metadata (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/metadata')
+      .expect(200)
+      .expect(`{"appName":"hello-world-app","version":"1.0","description":"Demonstrates a simple \\"hello world\\" style app","lastCommitSha":"TBC"}`);
+  });
 });

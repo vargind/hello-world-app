@@ -19,4 +19,21 @@ describe('AppController', () => {
       expect(appController.getHello()).toBe('Hello World!');
     });
   });
+
+  describe('health', () => {
+    it('should return 200 (OK) status', () => {
+      expect(appController.getHealth()).toBe('hello-world-app is operating as expected');
+    });
+  });
+
+  describe('metadata', () => {
+    it('should return metadata', () => {
+      const metadata = appController.getMetadata();
+      expect(metadata).toHaveProperty('appName', 'hello-world-app');
+      expect(metadata).toHaveProperty('version', '1.0');
+      expect(metadata).toHaveProperty('description', `Demonstrates a simple "hello world" style app`);
+      expect(metadata).toHaveProperty('lastCommitSha', 'TBC');
+    });
+  });
+
 });
