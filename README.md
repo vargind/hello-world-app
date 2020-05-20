@@ -1,7 +1,10 @@
 # Hello World App
 
+[![Build Status](https://travis-ci.org/vargind/hello-world-app.svg?branch=master)](https://travis-ci.org/vargind/hello-world-app)
+
 This demonstrates a simple "Hello World" style app.
 The app is built using Travis CI.
+The app is deployed to Heroku.
 
 ## Endpoints
 
@@ -11,7 +14,12 @@ The app is built using Travis CI.
 
 ## Deployment
 
-TBC
+When a new commit is merged to the `master` branch, it should be automatically built by Travis CI.
+Travis should then automatically deploy it to Heroku.
+
+### Local Deployment
+
+To run this locally, run `npm run start`. The app should then be available at `http://localhost:3000`.
 
 ## Development
 

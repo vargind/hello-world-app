@@ -1,8 +1,13 @@
 language: node_js
 node_js: 12
 branches:
-  only: 
-    - master
+  only:
+  - master
 before_script:
-  - source ./scripts/get_hash.sh
-  - echo $COMMIT
+- source ./scripts/get_hash.sh
+- echo $COMMIT
+deploy:
+  provider: heroku
+  app: peterv-hello-world-app
+  api_key:
+    secure: mAtc/OiSwlPItqm/OzPKoYwzdMTrfbkVkI/fO1c+51YDFl6S3GaaOFqoFM/b2YofIjj9hmrRAJntQ3OmeaNBRBbs4v1fqQSYyqrMyN4W8YW1O2lgd2MrtR4VZlx2e2k8eXj5Uiy5LXXCjHTyEq3OqbJUdKu1rJsEs83kk4H7uIP+wszxZlbN9XGgAuxTPGRns6W+SFcINekqTSktCVatAxMTFXKaPffKwMp2hL1YEa35IZi9e4NeBnSULKLqCL77AVP8RWmMNqLFhgTGQi8zaWsAVTBDdnLSEkcasX9YXT83P+jVEmRZwcGJ1pSEUir4uZMxKiuf3Ge3jO2XtNkJDeXjI82uH/nOF06t7Upj2ZuEzFm0f0lcJVuxQ46SD/6BmmfLpgwSUYn0Hd177xep9euY4Rh10nuKy7XFdkKBfzSUVW0ixpNHaiNpCtaM3weEVqn+hOjoTOwP6J/LDmPj3wD3TpkkUGiMaL/M+J4XAuss9yO9sT1/RijeybzTHdfzqDH11E+slTXLTt0b2NOHR8qT0I5y0IAmPy2QJcPwVplCLVaJiWfFTIcFqF9iKc0vw6Af61bzm8aKmKHKVjYdEIizpNPF50+bZOEg3RBacZtyqpWd7Rvw/uAhDSFzH0HxpeOgdSt0HhE68i8+R0eh3yTQgruCEIgsz5sx9U4yIcY=
