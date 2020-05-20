@@ -32,7 +32,8 @@ describe('AppController', () => {
       expect(metadata).toHaveProperty('appName', 'hello-world-app');
       expect(metadata).toHaveProperty('version', '1.0');
       expect(metadata).toHaveProperty('description', `Demonstrates a simple "hello world" style app`);
-      expect(metadata).toHaveProperty('lastCommitSha', 'TBC');
+      const hash = process.env.COMMIT || 'unknown';
+      expect(metadata).toHaveProperty('lastCommitSha', hash);
     });
   });
 

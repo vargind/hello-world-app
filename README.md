@@ -1,7 +1,7 @@
 # Hello World App
 
 This demonstrates a simple "Hello World" style app.
-The app is packaged as a Docker container and built using Travis CI.
+The app is built using Travis CI.
 
 ## Endpoints
 
@@ -16,4 +16,4 @@ TBC
 ## Development
 
 * Ensure code is linted `npm run lint`
-* Run unit tests with `npm run test` and end-to-end tests with `npm run test:e2e`
+* Run unit tests with `npm test` and end-to-end tests with `npm run test:e2e`

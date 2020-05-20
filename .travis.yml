@@ -1,0 +1,9 @@
+language: node_js
+node_js: 12
+branches:
+  only: 
+    - master
+before_script:
+  - source ./scripts/get_hash.sh
+script:
+  - ./scripts/run_tests.sh
