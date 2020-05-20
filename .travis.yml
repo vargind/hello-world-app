@@ -5,5 +5,4 @@ branches:
     - master
 before_script:
   - source ./scripts/get_hash.sh
-script:
-  - ./scripts/run_tests.sh
+  - echo $COMMIT
