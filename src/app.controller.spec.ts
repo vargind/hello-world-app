@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import fs = require('fs');
 
 describe('AppController', () => {
   let appController: AppController;
@@ -32,7 +33,7 @@ describe('AppController', () => {
       expect(metadata).toHaveProperty('appName', 'hello-world-app');
       expect(metadata).toHaveProperty('version', '1.0');
       expect(metadata).toHaveProperty('description', `Demonstrates a simple "hello world" style app`);
-      const hash = process.env.COMMIT || 'unknown';
+      const hash = fs.readFileSync('hash', 'utf8');
       expect(metadata).toHaveProperty('lastCommitSha', hash);
     });
   });

@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import fs = require('fs');
 
 export interface IMetadataResponse {
   appName: string;
@@ -13,7 +14,6 @@ export class AppService {
   private readonly APP_NAME = 'hello-world-app';
   private readonly APP_VERSION = '1.0';
   private readonly APP_DESCRIPTION = `Demonstrates a simple "hello world" style app`;
-  private readonly COMMIT_HASH = process.env.COMMIT || 'unknown';
 
   getHello(): string {
     return 'Hello World!';
@@ -24,11 +24,17 @@ export class AppService {
   }
 
   getMetadata(): IMetadataResponse {
+    let hash = 'unknown';
+    try {
+      hash = fs.readFileSync('hash', 'utf8');
+    } catch (error) {
+      hash = 'unknown';
+    }
     return {
       appName: this.APP_NAME,
       version: this.APP_VERSION,
       description: this.APP_DESCRIPTION,
-      lastCommitSha: this.COMMIT_HASH,
+      lastCommitSha: hash,
     };
   }
 }

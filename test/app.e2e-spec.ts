@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
+import fs = require('fs');
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -31,9 +32,10 @@ describe('AppController (e2e)', () => {
 
   // Note expected data has escaped backslash (\\) to match returned data which has single backslash (\)
   it('/metadata (GET)', () => {
+    const hash = fs.readFileSync('hash', 'utf8');
     return request(app.getHttpServer())
       .get('/metadata')
       .expect(200)
-      .expect(`{"appName":"hello-world-app","version":"1.0","description":"Demonstrates a simple \\"hello world\\" style app","lastCommitSha":"TBC"}`);
+      .expect(`{"appName":"hello-world-app","version":"1.0","description":"Demonstrates a simple \\"hello world\\" style app","lastCommitSha":"${hash}"}`);
   });
 });

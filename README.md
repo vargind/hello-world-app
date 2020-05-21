@@ -8,18 +8,18 @@ The app is deployed to Heroku.
 
 ## Endpoints
 
-`/` (i.e. the root path) returns the text "Hello World!"
-`/health` returns a status message and a `200` response if the service is healthy
-`/metadata` returns some metadata about the app
+* `/` (i.e. the root path) returns the text "Hello World!"
+* `/health` returns a status message and a `200` response if the service is healthy
+* `/metadata` returns some metadata about the app
 
 ## Deployment
 
-When a new commit is merged to the `master` branch, it should be automatically built by Travis CI.
-Travis should then automatically deploy it to Heroku.
+When a new commit is merged to the `master` branch and pushed to GitHub, it should be automatically built by Travis CI.
+Travis should then automatically deploy it to Heroku, where it should be available at [peterv-hello-world-app.herokuapp.com](https://peterv-hello-world-app.herokuapp.com/).
 
 ### Local Deployment
 
-To run this locally, run `npm run start`. The app should then be available at `http://localhost:3000`.
+To run this locally, run `npm run start`. The app should then be available at [localhost:3000](http://localhost:3000).
 
 ## Development
 

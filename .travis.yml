@@ -3,9 +3,6 @@ node_js: 12
 branches:
   only:
   - master
-before_script:
-- source ./scripts/get_hash.sh
-- echo $COMMIT
 deploy:
   provider: heroku
   app: peterv-hello-world-app

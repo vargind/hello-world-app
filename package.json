@@ -9,16 +9,18 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "prestart": "git rev-parse HEAD | cut -c1-10 | tr -d \\n > hash",
     "start": "node dist/main",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "pretest": "git rev-parse HEAD | cut -c1-10 | tr -d \\n > hash",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "git rev-parse HEAD | cut -c1-10 | tr -d \\n > hash && jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
