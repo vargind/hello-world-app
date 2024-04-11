@@ -2,9 +2,16 @@
 
 [![Build Status](https://travis-ci.org/vargind/hello-world-app.svg?branch=master)](https://travis-ci.org/vargind/hello-world-app)
 
-This demonstrates a simple "Hello World" style app.
-The app is built using Travis CI.
-The app is deployed to Heroku.
+This demonstrates a simple "Hello World" style app, which is was given as a coding test when I was seeking employment with a company. 
+The purpose of this repository is therefore to demonstrate that I am able to write code.
+It's not my best work, both because I didn't spend too much time on it, and I was fairly inexperienced with Node.js when I wrote it.
+
+The app was built using Travis CI. I'm not sure if that still works.
+
+The app was deployed to Heroku, but that doesn't work any more because they stopped their free plan.
+
+This was enough to get me the job, even though I didn't get all the requirements working, and even though I lost marks because the
+reviewer did not like the opinionated folder structure of NestJS.
 
 ## Endpoints
 
